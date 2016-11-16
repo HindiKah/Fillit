@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/15 12:26:17 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/16 13:04:02 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@
 
 typedef struct	s_piece
 {
-	int piece[4][4];
+	int		height;
+	int		width;
+	int		*blank;
+	char	value;
+	s_piece	*next;
 }				t_piece;
-
-void			ft_open_tetri(char *file, int nb_piece, t_piece *my_piece);
-int				ft_nb_pieces(char *file);
-t_piece			*ft_mempiece(int nb_piece);
-
 
 #endif
