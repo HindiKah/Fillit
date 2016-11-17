@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reduc.c                                        :+:      :+:    :+:   */
+/*   ft_height_end.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 14:58:13 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 15:40:38 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/17 16:33:16 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/17 16:35:05 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_min_h(char **piece)
+int		ft_height_end(char **piece)
 {
-	int		min_h;
-	int		i;
-	int		j;
+	int i;
+	int j;
 
-	i = 0;
+	i = 3;
 	j = 0;
-	while (piece[i][j] != '#' && piece[i])
+	while (piece[i][j] != '#')
 	{
-		if (piece[i][j] == '\0')
-		{
-			j = 0;
-			i++;
-		}
 		j++;
+		if (j == 4)
+		{
+			i--;
+			j = 0;
+		}
 	}
-	min_h = i;
-	return (min_h);
+	return (i);
 }
