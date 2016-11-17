@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 17:22:12 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/17 18:20:26 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <string.h>
-
+# include "libft.h"
 /*typedef struct	s_piece
 {
 	int			height;
@@ -39,4 +39,5 @@ int		ft_height_begin(char **piece);
 int		ft_height_end(char **piece);
 int		ft_width_begin(char **piece);
 int		ft_width_end(char **piece);
+char	*ft_make_str(char ** piece, char **pnr);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:00:48 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 17:29:49 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/17 17:59:55 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_resize(char **piece)
 	i = ft_height_begin(piece);
 	ret = (char**)malloc(sizeof(char*) * (ft_height_end(piece) 
 				- ft_height_begin(piece) + 2));
-	while (piece[i])
+	while (i <= ft_height_end(piece))
 	{
 		ret[j] = ft_strsub(piece[i], (unsigned int)ft_width_begin(piece), 
 				(size_t)(ft_width_end(piece) - ft_width_begin(piece) + 2));
