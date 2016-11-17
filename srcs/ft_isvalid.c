@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_isvalid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 14:04:36 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/16 13:20:22 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/16 16:42:15 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FILLIT_H_
-# define _FILLIT_H_
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <string.h>
-
-/*typedef struct	s_piece
+int		ft_isvalid(char **pieces)
 {
-	int		height;
-	int		width;
-	int		*blank;
-	char	value;
-	s_piece	*next;
-}				t_piece;
-*/
-void	ft_strpieces(char *file, char **pieces);
-int		ft_countpieces(char *file);
-#endif
+	int i;
+	int j;
+
+	i = 0;
+	while (pieces[i])
+	{
+		j = 0;
+		while (pieces[i][j])
+		{
+			if (j % 5 != 4)
+			{
+				if (pieces[i][j] != '#' && pieces[i][j] != '.' )
+				{
+					return (0);
+				}
+			}
+			if (j % 5 == 4 && pieces[i][j] != '\n' && j != 0)
+			{
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}

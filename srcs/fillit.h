@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 14:04:36 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/17 14:52:31 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@
 
 /*typedef struct	s_piece
 {
-	int		height;
-	int		width;
-	int		*blank;
-	char	value;
-	s_piece	*next;
+	int			height;
+	int			width;
+	int			*blank;
+	char		value;
+	s_piece		*next;
 }				t_piece;
 */
-void	ft_strpieces(char *file, char **pieces);
+char	**ft_make_ctab(char *piece);
+char	**ft_strpieces(char *file, char **pieces);
 int		ft_countpieces(char *file);
+int		ft_isvalid(char **pieces);
 #endif

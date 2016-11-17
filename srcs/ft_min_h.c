@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_reduc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 14:04:36 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/17 14:58:13 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/17 15:40:38 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FILLIT_H_
-# define _FILLIT_H_
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <string.h>
-
-/*typedef struct	s_piece
+int		ft_min_h(char **piece)
 {
-	int		height;
-	int		width;
-	int		*blank;
-	char	value;
-	s_piece	*next;
-}				t_piece;
-*/
-void	ft_strpieces(char *file, char **pieces);
-int		ft_countpieces(char *file);
-#endif
+	int		min_h;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (piece[i][j] != '#' && piece[i])
+	{
+		if (piece[i][j] == '\0')
+		{
+			j = 0;
+			i++;
+		}
+		j++;
+	}
+	min_h = i;
+	return (min_h);
+}

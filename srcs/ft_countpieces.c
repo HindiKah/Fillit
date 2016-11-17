@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_countpieces.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 14:04:36 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/16 13:43:32 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/16 15:02:28 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FILLIT_H_
-# define _FILLIT_H_
+#include "libft.h"
+#include "fillit.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <string.h>
-
-/*typedef struct	s_piece
+int		ft_countpieces(char *file)
 {
-	int		height;
-	int		width;
-	int		*blank;
-	char	value;
-	s_piece	*next;
-}				t_piece;
-*/
-void	ft_strpieces(char *file, char **pieces);
-int		ft_countpieces(char *file);
-#endif
+	char	buf;
+	int		file_d;
+	int		ret;
+	int		res;
+	
+	res = 0;
+	if (!file)
+		return (0);
+	file_d = open(file, O_RDONLY);
+	if (file_d == -1)
+		return (0);
+	while ((ret = read(file_d, &buf, 1)) > 0)
+		res++;
+	res++;
+	if (res % 21 != 0)
+		return (0);
+	res /= 21;
+	return (res);
+}
