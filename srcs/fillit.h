@@ -30,6 +30,7 @@ typedef struct	s_piece
 	struct s_piece		*next;
 }				t_piece;
 
+char	**ft_init_map(int size);
 int		ft_sstrlen(char **sstr);
 char	**ft_resize(char **piece);
 char	**ft_make_ctab(char *piece);
