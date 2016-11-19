@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/19 17:29:45 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/19 17:51:30 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ int		ft_width_begin(char **piece);
 int		ft_width_end(char **piece);
 char	*ft_make_str(char ** piece, char **pnr);
 char	***ft_put_rpieces(char *file);
+void	ft_convert_letter(char ***r_piece);
 #endif
