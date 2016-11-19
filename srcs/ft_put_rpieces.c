@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_put_rpieces.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 13:48:28 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/19 17:38:30 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/19 17:15:02 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/19 17:33:01 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+char	***ft_put_rpieces(char *file)
 {
-	int i = 0;
-	int j;
-	char ***all_rpieces;
+	int i;
+	char **tmp_piece;
+	char **piece1;
+	char ***ret;
 
-	if (argc == 2)
-		all_rpieces = ft_put_rpieces(argv[1]);
-	while (all_rpieces[i])
+	i = 0;
+	ret =(char***)malloc(sizeof(char**) * (ft_countpieces(file) + 1));
+	if (!ret)
+		return NULL;
+	while (i < ft_countpieces(file))
 	{
-		j = 0;
-		ft_putstr("Piece num ");
-		ft_putnbr(i + 1);
-		ft_putchar('\n');
-		while (all_rpieces[i][j])
-		{
-			ft_putstr(all_rpieces[i][j++]);
-			ft_putchar('\n');
-		}
-		i++;
-		ft_putchar('\n');
+		tmp_piece = ft_strpieces(file, tmp_piece);
+		piece1 = ft_make_ctab(tmp_piece[i]);
+		ret[i++] = ft_resize(piece1);
 	}
-	return (0);
+	ret[i] = NULL;
+	return (ret);
 }

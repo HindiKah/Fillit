@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:00:32 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 18:43:18 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/19 17:32:01 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ char	*ft_make_str(char **piece, char **pnr)
 	while (i < (ft_height_end(pnr) - ft_height_begin(pnr) + 1))
 	{
 		str[k] = piece[i][j];
-		ft_putchar(piece[i][j]);
-		ft_putchar('\n');
 		j++;
 		if (piece[i][j - 1] == '\0')
 		{
