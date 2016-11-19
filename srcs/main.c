@@ -18,9 +18,8 @@ int		main(int argc, char **argv)
 	int i = 0;
 	int j;
 	char ***all_rpieces;
-	char **map;
+	struct t_map mymap;
 
-	map = ft_init_map(5);
 	if (argc == 2)
 		all_rpieces = ft_put_rpieces(argv[1]);
 	while (all_rpieces[i])
@@ -38,7 +37,9 @@ int		main(int argc, char **argv)
 		ft_putchar('\n');
 	}
 	i = 0;
-	while (map[i])
-		ft_putstr(map[i++]);
+	mymap = ft_init_smap(5);
+	i = 0;
+	while (mymap->map[i])
+		ft_putstr(mymap->map[i++]);
 	return (0);
 }

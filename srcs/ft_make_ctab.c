@@ -16,7 +16,6 @@ char	**ft_make_ctab(char *piece)
 {
 	int		i;
 	int		j;
-	int		k;
 	char	**ret;
 
 	i = 0;

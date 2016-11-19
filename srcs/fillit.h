@@ -21,16 +21,13 @@
 # include <fcntl.h>
 # include <string.h>
 # include "libft.h"
-typedef struct	s_piece
+typedef struct	s_map
 {
-	int					height;
-	int					width;
-	char				**pattern;
-	char				value;
-	struct s_piece		*next;
-}				t_piece;
-
-char	**ft_init_map(int size);
+	int			size;
+	char		**map;
+}				t_map;
+t_map	*ft_init_smap(int size);
+char	**ft_init_map(char **ret, int size);
 int		ft_sstrlen(char **sstr);
 char	**ft_resize(char **piece);
 char	**ft_make_ctab(char *piece);
