@@ -10,4 +10,4 @@ t_map	*ft_init_smap(int size)
 	mymap->size = size;
 	mymap->map = ft_init_map(mymap->map, size);
 	return (mymap);
-	}
+}
