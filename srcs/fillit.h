@@ -26,6 +26,9 @@ typedef struct	s_map
 	int			size;
 	char		**map;
 }				t_map;
+int		ft_check_patternb(char **pattern);
+int		ft_check_patterna(char **pattern);
+int		ft_check_pattern(char **pattern);
 t_map	*ft_init_smap(int size);
 char	**ft_init_map(char **ret, int size);
 int		ft_sstrlen(char **sstr);

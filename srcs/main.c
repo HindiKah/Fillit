@@ -44,5 +44,7 @@ int		main(int argc, char **argv)
 		ft_putstr(mymap->map[i++]);
 		ft_putchar('\n');
 	}
+	ft_putnbr(ft_check_pattern(all_rpieces[0]));
+		ft_putchar('\n');
 	return (0);
 }
