@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 13:48:28 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/21 14:49:44 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/21 19:16:35 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int		main(int argc, char **argv)
 		ft_putchar('\n');
 	}
 	i = 0;
-	mymap = ft_init_smap(6);
 	ft_putchar('\n');
 	ft_putchar('\n');
 	ft_putchar('\n');
@@ -55,18 +54,19 @@ int		main(int argc, char **argv)
 		i++;
 		ft_putchar('\n');
 	}
-	mymap = ft_toplace(mymap, all_rpieces[3], 0, 0);
-	mymap = ft_toplace(mymap, all_rpieces[1], 2, 0);
 	i = 0;
-	while (mymap->map[i])
+		ft_putchar('\n');
+	int size = 2;
+	mymap = NULL;
+	while (mymap == NULL || ft_isempty(mymap->map))
 	{
-		ft_putstr(mymap->map[i++]);
-		ft_putchar('\n');
+		mymap = ft_init_smap(size++);
+		mymap = ft_solve(mymap, all_rpieces, 0);
 	}
-	mymap = ft_rm_pattern(mymap, all_rpieces[3], 0, 0);
+		ft_putchar('\n');
 		ft_putchar('\n');
 	i = 0;
-	while (mymap->map[i])
+	while (mymap->map[i] && i < mymap->size)
 	{
 		ft_putstr(mymap->map[i++]);
 		ft_putchar('\n');
