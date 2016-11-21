@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ifplace.c                                       :+:      :+:    :+:   */
+/*   ft_toplace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 11:41:00 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/21 14:22:47 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/21 14:30:22 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/21 14:39:43 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_ifplace(t_map *mymap, char **pattern, int x, int y)
+t_map	*ft_toplace(t_map *mymap, char **pattern, int x, int y)
 {
-	int i;
-	int j;
-	int ret;
-
-	i = 0;
-	ret = 0;
-	while (x + i < ft_sstrlen(mymap->map) && i < ft_sstrlen(pattern))
+	if (ft_ifplace(mymap, pattern, x, y))
 	{
-		j = 0;
-		while (y + j  < ft_strlen(mymap->map[x + i]) && j < ft_strlen(pattern[i]))
-		{
-			if (pattern[i][j] <= 'Z' && pattern [i][j] >= 'A'
-					&& mymap->map[x + i][y + j] == '.')
-				ret++;
-			j++;
-		}
-		i++;
+		mymap = ft_place(mymap, pattern, x, y);
+		return (mymap);
 	}
-	return (ret == 4 ? 1 : 0);
+	return (NULL);
 }
