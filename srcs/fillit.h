@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/19 17:51:30 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/21 11:54:29 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,6 @@ int		ft_width_end(char **piece);
 char	*ft_make_str(char ** piece, char **pnr);
 char	***ft_put_rpieces(char *file);
 void	ft_convert_letter(char ***r_piece);
+int		ft_check_sharp(char **pattern);
+int		ft_ifplace(t_map *mymap, char **pattern, int x, int y);
 #endif
