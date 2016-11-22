@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_completecheck.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 13:48:28 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/22 18:12:13 by ybenoit          ###   ########.fr       */
+/*   Created: 2016/11/22 17:48:35 by ybenoit           #+#    #+#             */
+/*   Updated: 2016/11/22 18:08:08 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+int		ft_completecheck(char *file, char ***all_rpieces)
 {
-	char ***all_rpieces;
-	int nb_piece; 
+	int i;
+	int ret;
 
-	if (argc != 2)
+	ret = 1;
+	i = 0;
+	while (all_rpieces[i])
+		ret *= ft_check_pattern(all_rpieces[i++]);
+	if (ft_countpieces(file) > 26 || ft_countpieces(file) < 1)
 		return (0);
-	all_rpieces = ft_put_rpieces(argv[1]);
-	if (ft_completecheck(argv[1], all_rpieces) == 0)
-	{
-		ft_putstr("error\n");
-		return (0);
-	}
-	nb_piece = ft_countpieces(argv[1]);
-	ft_fillit(all_rpieces, nb_piece);
-	ft_memdel((void**)(all_rpieces));
-
-	return (0);
+	return (ret);
 }
