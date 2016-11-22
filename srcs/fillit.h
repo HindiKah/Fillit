@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 10:48:47 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/21 19:06:56 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/22 12:03:20 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ t_map	*ft_place(t_map *mymap, char **pattern, int x, int y);
 t_map	*ft_toplace(t_map *mymap, char **pattern, int x, int y);
 t_map	*ft_rm_pattern(t_map *mymap, char **pattern, int x, int y);
 t_map	*ft_tracking(t_map *mymap, char **pattern, int x, int y);
-t_map	*ft_solve(t_map *mymap, char ***all_rpieces, int level);
+t_map	*ft_solve(t_map *mymap, char ***all_rpieces,int nb_piece);
 int		ft_isempty(char **map);
 #endif
