@@ -6,16 +6,16 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 16:30:49 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 16:31:51 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 11:42:34 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-int ft_width_end(char **piece)
+int		ft_width_end(char **piece)
 {
 	int i;
-	int j;		
+	int j;
 
 	i = 0;
 	j = 3;

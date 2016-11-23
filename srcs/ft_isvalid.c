@@ -6,11 +6,11 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 13:20:22 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 16:42:15 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 14:17:21 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
 int		ft_isvalid(char **pieces)
 {
@@ -25,15 +25,11 @@ int		ft_isvalid(char **pieces)
 		{
 			if (j % 5 != 4)
 			{
-				if (pieces[i][j] != '#' && pieces[i][j] != '.' )
-				{
+				if (pieces[i][j] != '#' && pieces[i][j] != '.')
 					return (0);
-				}
 			}
 			if (j % 5 == 4 && pieces[i][j] != '\n' && j != 0)
-			{
 				return (0);
-			}
 			j++;
 		}
 		i++;

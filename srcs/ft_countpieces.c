@@ -6,11 +6,10 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 13:43:32 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 15:02:28 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 10:14:31 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 int		ft_countpieces(char *file)
@@ -19,7 +18,7 @@ int		ft_countpieces(char *file)
 	int		file_d;
 	int		ret;
 	int		res;
-	
+
 	res = 0;
 	if (!file)
 		return (0);

@@ -6,15 +6,15 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 16:30:19 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/19 16:32:56 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 11:59:02 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-int		ft_sstrlen(char **sstr)
+size_t		ft_sstrlen(char **sstr)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (sstr[i])

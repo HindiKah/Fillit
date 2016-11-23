@@ -6,11 +6,10 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:00:48 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/19 17:45:14 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 11:41:59 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 char	**ft_resize(char **piece)
@@ -21,11 +20,11 @@ char	**ft_resize(char **piece)
 
 	j = 0;
 	i = ft_height_begin(piece);
-	ret = (char**)malloc(sizeof(char*) * (ft_height_end(piece) 
+	ret = (char**)malloc(sizeof(char*) * (ft_height_end(piece)
 				- ft_height_begin(piece) + 2));
 	while (i <= ft_height_end(piece))
 	{
-		ret[j] = ft_strsub(piece[i], (unsigned int)ft_width_begin(piece), 
+		ret[j] = ft_strsub(piece[i], (unsigned int)ft_width_begin(piece),
 				(size_t)(ft_width_end(piece) - ft_width_begin(piece) + 2));
 		i++;
 		j++;

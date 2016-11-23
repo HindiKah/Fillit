@@ -6,16 +6,16 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 16:32:06 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/17 16:33:08 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 11:43:04 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
 int		ft_height_begin(char **piece)
 {
 	int i;
-	int j;		
+	int j;
 
 	i = 0;
 	j = 0;

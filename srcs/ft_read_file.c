@@ -6,11 +6,10 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 13:06:19 by ybenoit           #+#    #+#             */
-/*   Updated: 2016/11/16 15:15:33 by ybenoit          ###   ########.fr       */
+/*   Updated: 2016/11/23 12:11:22 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 char	**ft_strpieces(char *file, char **pieces)

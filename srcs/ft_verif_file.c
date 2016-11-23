@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_map.c                                      :+:      :+:    :+:   */
+/*   ft_verif_file.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arive-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 10:12:57 by arive-de          #+#    #+#             */
-/*   Updated: 2016/11/23 10:13:00 by arive-de         ###   ########.fr       */
+/*   Created: 2016/11/23 14:42:09 by arive-de          #+#    #+#             */
+/*   Updated: 2016/11/23 15:21:42 by arive-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**ft_init_map(char **ret, int size)
+int		ft_verif_file(char *file)
 {
+	char	buf[1];
+	char	*test;
+	int		fd;
+	int		ret;
 	int		i;
-	int		j;
 
 	i = 0;
-	ret = (char**)malloc(sizeof(char*) * (size + 1));
-	if (!ret)
-		return (NULL);
-	while (i < size)
+	test = (char*)malloc(sizeof(char*) * (651));
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	while ((ret = read(fd, &buf, 1)) > 0)
 	{
-		j = 0;
-		ret[i] = (char*)malloc(sizeof(char) * (size + 1));
-		if (!*ret)
-			return (NULL);
-		while (j < size)
-			ret[i][j++] = '.';
-		ret[i][j] = '\0';
+		test[i] = buf[0];
 		i++;
 	}
-	ret[i] = NULL;
-	return (ret);
+	test[i] = '\0';
+	close(fd);
+	if ((int)ft_strlen(test) != 21 * ft_countpieces(file) - 1)
+	{
+		free(test);
+		return (0);
+	}
+	free(test);
+	return (1);
 }

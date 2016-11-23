@@ -6,45 +6,38 @@
 #    By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/15 10:27:58 by ybenoit           #+#    #+#              #
-#    Updated: 2016/11/15 10:43:29 by ybenoit          ###   ########.fr        #
+#    Updated: 2016/11/23 16:00:10 by arive-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= fillit 
 
-SRC= *.c
-
-DIR = $(addprefix $(FILEDIR),$(SRC:.c=.o))
+SRC= ./srcs/*.c
+OBJ= ./srcs/*.o
 
 CC= gcc
 CFLAGS= -Wall -Wextra -Werror
 
-LIBFT= ./LibGitHub//libft.a
-LIBINC= -I./LibGitHub
-LIBLINK= -L./LibGitHub -lft
+LIBFT= ./libft//libft.a
+LIBINC= -I./libft
 
-SRCDIR= ./srcs/
-INCDIR= ./includes/
-FILEDIR= ./Files/
+INCDIR= -I./includes/
 
-all: obj libft $(NAME)
-
-obj:
-	/bin/mkdir -p $(FILEDIR)
-
-$(REPDIR)%.o:$(SRCDIR)%.c
-	$(CC) $(CFLAGS) $(LIBINC) -I $(INCDIR) -o $@ -c $<
+all: libft $(NAME)
 
 libft: $(LIBFT)
 
 $(LIBFT):
-	make -C ./LibGitHub/
+	make -C ./libft/
 
-$(NAME): $(FILE)
-	$(CC) $(LIBLINK) -o $(NAME) $(OBJ)
+$(NAME):
+	$(CC) -o $(NAME) $(CFLAGS) $(LIBINC) $(INCDIR) $(LIBFT)
 
+$(OBJ):
+	$(CC) -c $(CFLAGS) $(SRC) $(LIBINC) $(INCDIR) $(LIBFT)
+	
 clean:
-	/bin/rm -rf $(FILEDIR)
+	/bin/rm -rf *.o
 
 fclean: clean
 	/bin/rm -rf $(NAME)
